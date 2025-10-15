@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ignite STEM | STEM Competitions & Ideas</title>
+  <style>
+    /* ===== Global Styles ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(10, 10, 10, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    header h1 {
+      font-size: 1.6rem;
+      color: #00c6ff;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #00c6ff;
+    }
+
+    /* ===== Sections ===== */
+    section {
+      min-height: 100vh;
+      padding: 120px 80px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section h2 {
+      font-size: 2.4rem;
+      color: #00c6ff;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      max-width: 700px;
+      line-height: 1.7;
+      font-size: 1.1rem;
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      background: #00c6ff;
+      color: #0a0a0a;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      margin-top: 20px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .btn::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.4s ease, height 0.4s ease;
+    }
+
+    .btn:active::after {
+      width: 200%;
+      height: 200%;
+      transition: 0s;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    footer p {
+      color: #777;
+      font-size: 0.95rem;
+    }
+
+    footer span {
+      color: #00c6ff;
+      font-weight: 600;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      header {
+        padding: 15px 30px;
+      }
+      nav ul {
+        gap: 15px;
+      }
+      section {
+        padding: 100px 40px 60px;
+      }
+      section h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== Header ===== -->
+  <header>
+    <h1>Ignite STEM</h1>
+    <nav>
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#ideas">Ideas</a></li>
+        <li><a href="#guides">Guides</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Home Section ===== -->
+  <section id="home">
+    <h2>Welcome to Ignite STEM</h2>
+    <p>
+      Discover the world of Science, Technology, Engineering, and Mathematics through creativity and innovation.
+      Participate in exciting competitions, design unique models, and explore limitless ideas that can change the world.
+    </p>
+    <button class="btn" onclick="scrollToSection('ideas')">Explore Ideas</button>
+  </section>
+
+  <!-- ===== Ideas Section ===== -->
+  <section id="ideas">
+    <h2>Creative STEM Model Ideas</h2>
+    <p>
+      • Smart Traffic Light using Sensors<br />
+      • Solar-Powered Water Pump<br />
+      • Automatic Plant Watering System<br />
+      • Wind Energy Generator<br />
+      • Earthquake Early Warning Model
+    </p>
+    <button class="btn" onclick="scrollToSection('guides')">View Guides</button>
+  </section>
+
+  <!-- ===== Guides Section ===== -->
+  <section id="guides">
+    <h2>How to Build STEM Models</h2>
+    <p>
+      Get hands-on experience by following easy guides and tutorials. Learn about circuits, mechanics, and coding to bring your innovative
+      ideas to life. Collaborate with friends and test your prototypes to improve your designs.
+    </p>
+    <button class="btn" onclick="scrollToSection('events')">See Events</button>
+  </section>
+
+  <!-- ===== Events Section ===== -->
+  <section id="events">
+    <h2>Upcoming STEM Competitions</h2>
+    <p>
+      📅 October 25 – Inter-School Robotics Challenge<br />
+      📅 November 10 – National Science Fair<br />
+      📅 December 5 – Innovative Tech Expo<br /><br />
+      Compete, showcase your creativity, and inspire others to dream big.
+    </p>
+    <button class="btn" onclick="scrollToSection('contact')">Contact Us</button>
+  </section>
+
+  <!-- ===== Contact Section ===== -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>
+      Have an idea or want to join the competition?<br />
+      Email us at: <strong>stemclub@school.edu</strong><br />
+      Or visit the STEM Club room during break hours.
+    </p>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>© 2025 <span>Muhammed Musthafa</span> | STEM Club | Ignite STEM</p>
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    // Smooth Scroll Function
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Reveal Sections on Scroll
+    const sections = document.querySelectorAll("section");
+    const revealOnScroll = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    sections.forEach((section) => revealOnScroll.observe(section));
+
+    // Active Link Highlight
+    const navLinks = document.querySelectorAll("nav a");
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(current)) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
